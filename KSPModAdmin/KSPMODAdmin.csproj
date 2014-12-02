@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{828AD1CC-2BCB-44F6-9CE3-F2CC37339385}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPModAdmin</RootNamespace>
+    <AssemblyName>KSPModAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pics\application_form_add.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug MONO|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug MONO\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MONOBUILD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release MONO|x86'">
+    <OutputPath>bin\x86\Release MONO\</OutputPath>
+    <DefineConstants>TRACE;MONOBUILD</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="KerbalStuffReadOnly, Version=0.3.5386.16284, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>externals\KerbalStuffReadOnly.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.10.3.0, Culture=neutral, PublicKeyToken=beaf6f427e128133, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>externals\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="utils\Controls\CheckBoxComboBox\CheckBoxComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utils\Controls\CheckBoxComboBox\CheckBoxComboBox.Designer.cs">
+      <DependentUpon>CheckBoxComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utils\Controls\CheckBoxComboBox\GripBounds.cs" />
+    <Compile Include="utils\Controls\CheckBoxComboBox\Popup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utils\Controls\CheckBoxComboBox\Popup.Designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utils\Controls\CheckBoxComboBox\PopupComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utils\Controls\CheckBoxComboBox\PopupComboBox.Designer.cs">
+      <DependentUpon>PopupComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utils\Controls\CheckBoxComboBox\Selection Wrappers\ListSelectionWrapper.cs" />
+    <Compile Include="utils\Controls\CheckBoxComboBox\Selection Wrappers\ObjectSelectionWrapper.cs" />
+    <Compile Include="utils\Controls\ToolStripSpringTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utils\Controls\TextBoxNumeric.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utils\Controls\TreeListViewEx\HitInfoEx.cs" />
+    <Compile Include="utils\Controls\TreeListViewEx\Tracing.cs" />
+    <Compile Include="utils\Controls\TreeListViewEx\TreeListColumn.cs" />
+    <Compile Include="utils\Controls\TreeListViewEx\TreeListColumn.Design.cs" />
+    <Compile Include="utils\Controls\TreeListViewEx\TreeListNode.cs" />
+    <Compile Include="utils\Controls\TreeListViewEx\TreeListOptions.cs" />
+    <Compile Include="utils\Controls\TreeListViewEx\TreeListPainter.cs" />
+    <Compile Include="utils\Controls\TreeListViewEx\TreeListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utils\Controls\TreeListViewEx\Util.cs" />
+    <Compile Include="utils\Controls\TreeViewEx\TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utils\Controls\WebBrowserEx\DownloadManager.cs" />
+    <Compile Include="utils\Controls\WebBrowserEx\FileDownloadEventArgs.cs" />
+    <Compile Include="utils\Controls\WebBrowserEx\Imports.cs" />
+    <Compile Include="utils\Controls\WebBrowserEx\WebBrowserEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utils\ExtensionString.cs" />
+    <Compile Include="utils\Controls\FolderSelectDialog\FolderSelectDialog.cs" />
+    <Compile Include="utils\Controls\FolderSelectDialog\Reflector.cs" />
+    <Compile Include="utils\ModPackHandler.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TreeNodeCraft.cs" />
+    <Compile Include="TreeNodeNote.cs" />
+    <Compile Include="utils\ActionKeyManager\ActionKeyManager.cs" />
+    <Compile Include="PathInfo.cs" />
+    <Compile Include="TreeNodePart.cs" />
+    <Compile Include="utils\ActionKeyManager\VirtualKey.cs" />
+    <Compile Include="utils\ModRegister.cs" />
+    <Compile Include="utils\NativeMethods.cs" />
+    <Compile Include="utils\Logging\Log.cs" />
+    <Compile Include="ModInfo.cs" />
+    <Compile Include="utils\Logging\PerformanceLogger.cs" />
+    <Compile Include="utils\PluginLoader.cs" />
+    <Compile Include="utils\www\KSPForumHelper.cs" />
+    <Compile Include="utils\www\CurseForgeHelper.cs" />
+    <Compile Include="utils\www\KerbalStuffHelper.cs" />
+    <Compile Include="utils\www\SpaceportHelper.cs" />
+    <Compile Include="utils\www\wwwHelper.cs" />
+    <Compile Include="views\frmAddMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmAddMod.Designer.cs">
+      <DependentUpon>frmAddMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmCollisionSolving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmCollisionSolving.Designer.cs">
+      <DependentUpon>frmCollisionSolving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmCopyModInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmCopyModInfo.Designer.cs">
+      <DependentUpon>frmCopyModInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmEditModInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmEditModInfo.Designer.cs">
+      <DependentUpon>frmEditModInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmImExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmImExport.Designer.cs">
+      <DependentUpon>frmImExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmLinkSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmLinkSelection.Designer.cs">
+      <DependentUpon>frmLinkSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmNameSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmNameSelection.Designer.cs">
+      <DependentUpon>frmNameSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmPartCategorySelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmPartCategorySelection.Designer.cs">
+      <DependentUpon>frmPartCategorySelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmSearchDLG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmSearchDLG.Designer.cs">
+      <DependentUpon>frmSearchDLG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeNodeMod.cs" />
+    <Compile Include="utils\AsyncTask.cs" />
+    <Compile Include="config\KSPConfig.cs" />
+    <Compile Include="config\AdminConfig.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="frmMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainForm.Designer.cs">
+      <DependentUpon>frmMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmSelectDownloadURL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmSelectDownloadURL.Designer.cs">
+      <DependentUpon>frmSelectDownloadURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmShowConflicts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmShowConflicts.Designer.cs">
+      <DependentUpon>frmShowConflicts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmUpdateDLG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmUpdateDLG.Designer.cs">
+      <DependentUpon>frmUpdateDLG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucBackup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucBackup.Designer.cs">
+      <DependentUpon>ucBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucCrafts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucCrafts.Designer.cs">
+      <DependentUpon>ucCrafts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucFlags.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucFlags.Designer.cs">
+      <DependentUpon>ucFlags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucHelp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucHelp.Designer.cs">
+      <DependentUpon>ucHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucBase.Designer.cs">
+      <DependentUpon>ucBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucParts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucParts.designer.cs">
+      <DependentUpon>ucParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucWelcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucWelcome.Designer.cs">
+      <DependentUpon>ucWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucLister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucLister.Designer.cs">
+      <DependentUpon>ucLister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucModBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucModBrowser.Designer.cs">
+      <DependentUpon>ucModBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucModSelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucModSelection.Designer.cs">
+      <DependentUpon>ucModSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ucOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ucOptions.Designer.cs">
+      <DependentUpon>ucOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\frmDestFolderSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmDestFolderSelection.Designer.cs">
+      <DependentUpon>frmDestFolderSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmTextDisplayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmTextDisplayer.Designer.cs">
+      <DependentUpon>frmTextDisplayer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmMainForm.resx">
+      <DependentUpon>frmMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmAddMod.resx">
+      <DependentUpon>frmAddMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmCollisionSolving.resx">
+      <DependentUpon>frmCollisionSolving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmCopyModInfo.resx">
+      <DependentUpon>frmCopyModInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmEditModInfo.resx">
+      <DependentUpon>frmEditModInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmImExport.resx">
+      <DependentUpon>frmImExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmLinkSelection.resx">
+      <DependentUpon>frmLinkSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmNameSelection.resx">
+      <DependentUpon>frmNameSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmPartCategorySelection.resx">
+      <DependentUpon>frmPartCategorySelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmSearchDLG.resx">
+      <DependentUpon>frmSearchDLG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmDestFolderSelection.resx">
+      <DependentUpon>frmDestFolderSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmSelectDownloadURL.resx">
+      <DependentUpon>frmSelectDownloadURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmShowConflicts.resx">
+      <DependentUpon>frmShowConflicts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmTextDisplayer.resx">
+      <DependentUpon>frmTextDisplayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmUpdateDLG.resx">
+      <DependentUpon>frmUpdateDLG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucBackup.resx">
+      <DependentUpon>ucBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucCrafts.resx">
+      <DependentUpon>ucCrafts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucFlags.resx">
+      <DependentUpon>ucFlags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucBase.resx">
+      <DependentUpon>ucBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucHelp.resx">
+      <DependentUpon>ucHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucParts.resx">
+      <DependentUpon>ucParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucWelcome.resx">
+      <DependentUpon>ucWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucLister.resx">
+      <DependentUpon>ucLister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucModBrowser.resx">
+      <DependentUpon>ucModBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucModSelection.resx">
+      <DependentUpon>ucModSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ucOptions.resx">
+      <DependentUpon>ucOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="doc\KerbalStuff Wrapper.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="doc\Sharp Compress.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="doc\KerbalStuff.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="externals\KerbalStuffReadOnly.dll" />
+    <Content Include="externals\SharpCompress.dll" />
+    <Content Include="KSicon.ico" />
+    <Content Include="pics\application_form_add.ico" />
+    <Content Include="doc\ReadMe.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="doc\ToDo.txt" />
+    <Content Include="pics\application.ico" />
+    <Content Include="Resources\KSicon.png" />
+    <None Include="Resources\KSicon1.png" />
+    <Content Include="utils\Controls\FolderSelectDialog\_license\license.txt" />
+    <None Include="Resources\colors.png" />
+    <Content Include="utils\Controls\TreeListViewEx\ReadMe.txt" />
+    <None Include="Resources\plus.gif" />
+    <None Include="Resources\minus.gif" />
+    <None Include="Resources\arrow_left_blue.png" />
+    <None Include="Resources\arrow_right_blue.png" />
+    <None Include="Resources\component.png" />
+    <None Include="Resources\component_add.png" />
+    <None Include="Resources\component_delete.png" />
+    <None Include="Resources\component_gearwheel.png" />
+    <None Include="Resources\component_into.png" />
+    <None Include="Resources\component_next.png" />
+    <None Include="Resources\component_options.png" />
+    <None Include="Resources\component_scroll_floppy_disk.png" />
+    <None Include="Resources\component_scroll_next.png" />
+    <None Include="Resources\component_view.png" />
+    <None Include="Resources\components.png" />
+    <None Include="Resources\components_delete.png" />
+    <None Include="Resources\components_gearwheel.png" />
+    <None Include="Resources\components_into.png" />
+    <None Include="Resources\delete2.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\earth_checkbox_checked.png" />
+    <None Include="Resources\folder1.png" />
+    <None Include="Resources\folder_view.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\component_earth.png" />
+    <None Include="Resources\component_scroll.png" />
+    <None Include="Resources\component_replace.png" />
+    <None Include="Resources\folder_add1.png" />
+    <None Include="Resources\folder_delete1.png" />
+    <None Include="Resources\folder_tool.png" />
+    <None Include="Resources\airplane_checkbox_checked.png" />
+    <None Include="Resources\airplane_delete.png" />
+    <None Include="Resources\airplane_replace.png" />
+    <None Include="Resources\airplane_scroll.png" />
+    <None Include="Resources\flag_scotland_add.png" />
+    <None Include="Resources\flag_scotland_delete.png" />
+    <None Include="Resources\components_find.png" />
+    <None Include="Resources\data_add.png" />
+    <None Include="Resources\data_copy_delete.png" />
+    <None Include="Resources\data_delete.png" />
+    <None Include="Resources\data_floppy_disk.png" />
+    <None Include="Resources\data_options.png" />
+    <None Include="Resources\data_warning_options.png" />
+    <None Include="Resources\data_gearwheel_options.png" />
+    <None Include="Resources\note_edit1.png" />
+    <None Include="Resources\data_floppy_disk_into.png" />
+    <None Include="Resources\disk_black_data_into.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\anvil.jpg" />
+    <None Include="Resources\bug_red.png" />
+    <None Include="Resources\cc_license.jpg" />
+    <None Include="Resources\components_scroll_into.png" />
+    <None Include="Resources\components_scroll_out.png" />
+    <None Include="Resources\components_scroll_replace.png" />
+    <None Include="Resources\checkbox_checked.png" />
+    <None Include="Resources\checkbox_unchecked.png" />
+    <None Include="Resources\forum.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\loader.gif" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\new.png" />
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

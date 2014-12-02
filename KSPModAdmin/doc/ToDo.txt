@@ -1,0 +1,111 @@
+﻿______BUGS______
+
+- TreeListView 
+  - BUG - Open Editor overlaps the vertical scrollbar.
+  - BUG - Editor don't move/resize on control resize.
+  - BUG - On column resize the Column will be sorted (No sort on col resize).
+  - BUG - You cant resize the 1st column to the left, to make it smaller.
+          You have to make the furthest column on the right BIGGER, by dragging the right column border outside the KSP MA window.
+
+- CHECK:
+  Oh, found another bug! When I used "Import new Flag" to import a flag from disk, and then tried to use the "Delete Flag" button, I got this dialogue box saying it is in use: [URL]http://i.imgur.com/jH0ULvu.png[/URL]
+  When I go to delete the file in Windows, it says it is in use by KSPModAdmin. This was my first time adding a flag, in case that's relevant.
+  Closing and opening KSPMA solved the problem.
+
+______ToDo______
+
+- BUG "After add from KSPForum URL the collision check failed." (same problem with other sites?)
+- BUG "Solve Conflicts from ContextMenu don't work."
+
+- Should reset of destination uncheck the nodes?
+
+- ModDownload should be async!
+
+- .net 4.0 solution
+
+-------------
+
+- Direct GitHub Downloads
+  Sample here -> https://github.com/rbray89/ActiveTextureManagement/releases/tag/3-1-basic
+                 https://github.com/rbray89/EnvironmentalVisualEnhancements/releases/tag/Release-7-3
+
+- BUG "KSP Forum edit date Problem when today (TimeZone Problem)"
+
+- extend frmAddMod -> Adding via Spaceport ID or KSPForum Thread ID
+
+- Auto Update for Forum mods.
+
+- Check on mod remove for used parts from that mod -> warn the user
+
+- Button to uncheck mod parts that aren't in use of any vessel.
+
+- Info after scan that user could create a zip of the scanned mods or auto zip of found mods.
+
+- Basic / Advanced mode for the GUI?
+
+- List export of the installed mods.
+
+- Auto download & updated of all outdated Mods
+
+- GitHub version control?
+
+- More KSP MA Logging:
+  - Actions and errors.
+
+- Test of KSP start button (is execution path right?)
+
+- ModSelection
+  - Check4Updates button?
+  - New View that shows the installation paths -> Node movable with drag & drop.
+
+- ModBrowser:
+  - View of all installed mods with current state (??)
+  - Don't add mod CheckBox -> No adding of downloaded mods.
+
+- Drag & Drop for KSP folders on Welcome Screen
+- Folder Drag & Drop fpr BackupPath und DownloadPath on Options tab.
+
+- search for part titles.
+
+- PartTab
+  - Part tweaking (with ModuleManager support).
+
+- Adding of User Created Tabs via Plugin.
+________________
+
+- Profile for KSP installations
+  - Ermöglicht unterschiedliche zusammenstellungen von mods zwischen den dann durch ein DropDownMenu gewechselt werden kann.
+  - Flight/Build checkbox (Flight: removes all not needed parts / Build: Adds all parts of the currently selected profile).
+  
+- Crafts shifting to other saves.
+
+- Flags Tab:
+  - It would also be nice to add a zip file of flags, and/or to allow multi-selection when adding flags.
+  
+TreeViewList:
+  - User addable Columns for TreeViewList.
+  - Button and CheckBox support for a cell -> for Download link -> opens the browser with the link.
+  - ToolTip support for cells.
+
+- context menu -> un/check all checkboxes of one mod
+
+Tabs:
+  - Chat tab?
+  - Help tab
+  - News tab
+  - Tools tab -> für extra Programme wie z.B. PartGenerator, ...
+  
+- Redo Zip source select (select a zip -> mapping of mod files to zip archive).
+
+- Save game analyzer.
+  - Refill fuel
+  - Ship/Debris removing
+  - Time warp
+
+- sort byState?
+  
+- Lagacy Format install option?
+
+- Mono support?
+
+- Icons anpassen?
